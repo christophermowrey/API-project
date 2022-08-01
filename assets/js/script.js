@@ -29,3 +29,31 @@ button.addEventListener("click", function buttonclick(event) {
     event.preventDefault();
     requestIP();
 });
+
+
+if (countryOrigin === undefined) {
+    var countryOrigin = "usd";
+  } 
+  if (countryDestination === undefined) {
+    var countryDestination = "eur";
+  }
+  
+  var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
+  // https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
+  // https://github.com/fawazahmed0/currency-api
+  
+  var responseText = document.getElementById('response-text');
+  
+  function getApi(currencyUrl) {
+    fetch(currencyUrl)
+      .then(function (response) {
+        console.log(response);
+        return response.json();
+        })
+    .then(function (data) {
+      console.log(data);
+    })
+  }
+  
+  getApi(currencyUrl);
+  
