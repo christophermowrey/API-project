@@ -7,16 +7,21 @@ var requestIP = function () {
             if (response.ok) {
                 response.json()
                     .then(function (data) {
-                        displayAPI(data);
-                        console.log(data);
+                        displayIP(data);
+                        storeIP(data);
                     });
             };
         });
 }
 
-var displayAPI = function (ip) {
+var displayIP = function (ip) {
     var countryCode = document.querySelector("h2");
     countryCode.textContent = ip.country_code;
+}
+
+var storeIP = function (ip) {
+    var storeCountryCode = ip.country_code;
+    localStorage.setItem("Home Country", JSON.stringify(storeCountryCode));
 }
 
 var button = document.querySelector("button");
