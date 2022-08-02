@@ -1,3 +1,13 @@
+.header {
+    
+}
+
+
+.footer{
+    background-color: yellowgreen;
+    color: whitesmoke;
+
+}
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
