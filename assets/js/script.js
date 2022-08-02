@@ -1,35 +1,58 @@
+var ipAccess = document.querySelector("#ipAccess");
+var modalYes = document.querySelector("#modalYes");
+var modalNo = document.querySelector("#modalNo");
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+
+ipAccess.textContent = "Get my country";
+
 var requestIP = function () {
-    var ipApiKey = "efeded716793ece82a2e910e26d0d738"
-    var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey
+  var ipApiKey = "efeded716793ece82a2e910e26d0d738"
+  var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey
 
-    fetch(ipUrl)
-        .then(function (response) {
-            if (response.ok) {
-                response.json()
-                    .then(function (data) {
-                        displayIP(data);
-                        storeIP(data);
-                    });
-            };
-        });
-}
-
-var displayIP = function (ip) {
-    var countryCode = document.querySelector("h2");
-    countryCode.textContent = ip.country_code;
+  fetch(ipUrl)
+    .then(function (response) {
+      if (response.ok) {
+        response.json()
+          .then(function (data) {
+            displayIP(data);
+            storeIP(data);
+          });
+      };
+    });
+  hideModal();
 }
 
 var storeIP = function (ip) {
-    var storeCountryCode = ip.country_code;
-    localStorage.setItem("Home Country", JSON.stringify(storeCountryCode));
+  var storeCountryCode = ip.country_code;
+  localStorage.setItem("Home Country", JSON.stringify(storeCountryCode));
 }
 
-var button = document.querySelector("button");
-button.addEventListener("click", function buttonclick(event) {
-    event.preventDefault();
-    requestIP();
-});
+var displayIP = function (ip) {
+  var countryCode = document.querySelector("h2");
+  countryCode.textContent = ip.country_code;
+}
 
+function hideModal() {
+  modal.style.display = "none";
+}
+
+ipAccess.onclick = function () {
+  modal.style.display = "block";
+}
+
+modalYes.addEventListener("click", requestIP);
+modalNo.addEventListener("click", hideModal);
+
+span.onclick = function () {
+  modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 
 if (countryOrigin === undefined) {
     var countryOrigin = "usd";
@@ -37,34 +60,34 @@ if (countryOrigin === undefined) {
 if (countryDestination === undefined) {
  var countryDestination = "eur";
 }
-  
+function getApi() {
+ 
   var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
-  // https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
-  // https://github.com/fawazahmed0/currency-api
+// https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
+// https://github.com/fawazahmed0/currency-api
   
 //   var responseText = document.getElementById('response-text'); //whatever the html ID is
   
-  function getApi(currencyUrl) {
     fetch(currencyUrl)
       .then(function (response) {
-        console.log(response);
-        return response.json();
+        
         if (response.ok) {
+            console.log(response);
             response.json()
-                .then(function (data) {
+            .then(function (data) {
+                console.log(data);
                     displayCurrency(data);
                     // storeCurrency(data);
                 });
+                
         };
-        })
-    .then(function (data) {
-      console.log(data);
+
     })
-  }
+}
   
-var displayCurrency = function () {
-  var countryCode = document.querySelector("h2");
-  countryCode.textContent = ip.country_code;
+var displayCurrency = function (value) {
+    var currency = document.querySelector("h2");
+    currency.textContent = value.eur
 }
 
-  getApi(currencyUrl);
+getApi();
