@@ -3,12 +3,16 @@ var modalYes = document.querySelector("#modalYes");
 var modalNo = document.querySelector("#modalNo");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+var countryVisiting = document.querySelector("#countryvisiting");
+var currencyAmt = document.querySelector("#currencyamt");
+var currencyInput = document.querySelector("#currencyinput");
+var calculated = document.querySelector("#calculated");
 
 ipAccess.textContent = "Get my country";
 
 var requestIP = function () {
   var ipApiKey = "efeded716793ece82a2e910e26d0d738"
-  var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey
+  var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey + "&output=json";
 
   fetch(ipUrl)
     .then(function (response) {
@@ -26,11 +30,12 @@ var requestIP = function () {
 var storeIP = function (ip) {
   var storeCountryCode = ip.country_code;
   localStorage.setItem("Home Country", JSON.stringify(storeCountryCode));
+  console.log(ip);
 }
 
 var displayIP = function (ip) {
   var countryCode = document.querySelector("h2");
-  countryCode.textContent = ip.country_code;
+  countryCode.textContent = ip.city + ", " + ip.region_name + ", " + ip.country_name;
 }
 
 function hideModal() {
@@ -54,20 +59,18 @@ window.onclick = function (event) {
   }
 }
 
-if (countryOrigin === undefined) {
-  var countryOrigin = "usd";
-}
-if (countryDestination === undefined) {
-  var countryDestination = "eur";
-}
+var requestCurrency = function () {
+  if (countryOrigin === undefined) {
+    var countryOrigin = "usd";
+  }
+  if (countryDestination === undefined) {
+    var countryDestination = "eur";
+  }
 
-var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
-// https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
-// https://github.com/fawazahmed0/currency-api
+  var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
+  // https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
+  // https://github.com/fawazahmed0/currency-api
 
-var responseText = document.getElementById('response-text');
-
-function getApi(currencyUrl) {
   fetch(currencyUrl)
     .then(function (response) {
       console.log(response);
@@ -75,7 +78,19 @@ function getApi(currencyUrl) {
     })
     .then(function (data) {
       console.log(data);
+      displayCalculated(data);
     })
 }
 
-getApi(currencyUrl);
+function displayCalculated(rate) {
+  calculated.textContent = rate.eur * currencyInput.value;
+}
+
+function submitCurrency() {
+  requestCurrency();
+}
+
+currencyAmt.addEventListener("click", function (event) {
+  event.preventDefault();
+  submitCurrency();
+})
