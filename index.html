@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Git That Currency</title>
-		<link rel="stylesheet" href="./assets/css/style.css" />
-	</head>
 
-	<body>
-		<main>
-			<header>
-				<h1>Git That Currency</h1>
-			</header>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git That Currency</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-			<section>
-				<h2></h2>
+<body>
+    <main>
+        <header>
+            <h1>Git That Currency</h1>
+        </header>
 
-				<button>Submit</button>
-			</section>
+        <section>
+            <h2></h2>
+            <button id="ipAccess"></button>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            This web application will be accessing your computer's current
+                            IP address.
+                        </p>
+                        <p>
+                            The only information that will be utilized will be your
+                            country's code.
+                        </p>
+                        <p>(EX: "US" for United States of America)</p>
+                        <p>Would you still like to continue?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="modalYes">Yes</button>
+                        <button id="modalNo">No</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			<section>
-				<h2>Country you are visting?</h2>
-				<input type="text" />
-				<button>Submit</button>
-			</section>
+        <section>
+            <h2>Country you are visiting?</h2>
+            <input type="text" />
+            <button>Submit</button>
+        </section>
 
-			<section>
-				<h2></h2>
-				<button id="ipAccess"></button>
-				<div id="myModal" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="modal-header">
-							<span class="close">&times;</span>
-							<h2>Modal Header</h2>
-						</div>
-						<div class="modal-body">
-							<p>
-								This web application will be accessing your computer's current
-								IP address.
-							</p>
-							<p>
-								The only information that will be utilized will be your
-								country's code.
-							</p>
-							<p>(EX: "US" for United States of America)</p>
-							<p>Would you still like to continue?</p>
-						</div>
-						<div class="modal-footer">
-							<button id="modalYes">Yes</button>
-							<button id="modalNo">No</button>
-						</div>
-					</div>
-				</div>
-			</section>
+        <section>
+            <h2>Currency amount?</h2>
+            <input type="text" />
+            <button>Submit</button>
+        </section>
 
-			<section>
-				<h2>Currency amount?</h2>
-				<input type="text" />
-				<button>Submit</button>
-			</section>
+        <section>
+            <h2>Calculated currency?</h2>
+            <input type="text" />
+            <button>Submit</button>
+        </section>
 
-			<section>
-				<h2>Calculated currency?</h2>
-				<input type="text" />
-				<button>Submit</button>
-			</section>
+        <script src="assets/js/script.js"></script>
+        <footer>
+            <button></button>
+        </footer>
+    </main>
+</body>
 
-			<script src="assets/js/script.js"></script>
-			<footer>
-				<button></button>
-			</footer>
-		</main>
-	</body>
 </html>
