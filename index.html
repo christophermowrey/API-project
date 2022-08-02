@@ -13,10 +13,30 @@
 </header>
 
 <main>
+
     <body>
         <section>
             <h2></h2>
-            <button>Button</button>
+            <button id="ipAccess"></button>
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Modal Header</h2>
+                    </div>
+                    <div class="modal-body">
+                        <p>This web application will be accessing your computer's current IP address.</p>
+                        <p>The only information that will be utilized will be your country's code.</p>
+                        <p>(EX: "US" for United States of America)</p>
+                        <p>Would you still like to continue?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="modalYes">Yes</button>
+                        <button id="modalNo">No</button>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <script src="assets/js/script.js"></script>
