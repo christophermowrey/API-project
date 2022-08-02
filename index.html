@@ -4,6 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Git That Currency</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
 
@@ -13,20 +17,9 @@
 				<h1>Git That Currency</h1>
 			</header>
 
-			<section>
+			<section class="box4">
 				<h2></h2>
-
-				<button>Submit</button>
-			</section>
-
-			<section>
-				<h2>Country you are visting?</h2>
-				<input type="text" />
-				<button>Submit</button>
-			</section>
-
-			<section>
-				<h2></h2>
+				<!-- Modal content -->
 				<button id="ipAccess"></button>
 				<div id="myModal" class="modal">
 					<!-- Modal content -->
@@ -54,23 +47,28 @@
 					</div>
 				</div>
 			</section>
+			<!-- Modal content -->
 
-			<section>
-				<h2>Currency amount?</h2>
-				<input type="text" />
+			<section class="box1">
+				<h2>Country you are visting?</h2>
+				<input class="input is-small" type="text" placeholder="Small input" />
 				<button>Submit</button>
 			</section>
 
-			<section>
+			<section class="box2">
+				<h2>Currency amount?</h2>
+				<input class="input is-small" type="text" placeholder="Small input" />
+				<button>Submit</button>
+			</section>
+
+			<section class="box3">
 				<h2>Calculated currency?</h2>
-				<input type="text" />
+				<input class="input is-small" type="text" placeholder="Small input" />
 				<button>Submit</button>
 			</section>
 
 			<script src="assets/js/script.js"></script>
-			<footer>
-				<button></button>
-			</footer>
+			<footer></footer>
 		</main>
 	</body>
 </html>
