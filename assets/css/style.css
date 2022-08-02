@@ -1,8 +1,26 @@
-
+:root {
+    --brown: #a88f82;
+    --tan: #f5e1d5;
+    --teal: #71a8a7;
+    --lightteal: #d5f5f5;
+    --light: #fffaf7;
+  }
 
 body {
     font-family: 'Rajdhani', sans-serif;
-    font-size: 16px;
+}
+.box {
+    background-color: yellowgreen;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
 }
 
 .footer{
