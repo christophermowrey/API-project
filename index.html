@@ -1,35 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Git That Currency</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+		<link rel="stylesheet" href="./assets/css/style.css" />
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Git that Currency</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-<header>Git that Currency</header>
 
-<main>
-    <body>
-        <section>
-            <h1> section for country</h1>
+	<body>
+        <header>Git that Currency</header>
+		<main>
+			<header>
+				<h1>Git That Currency</h1>
+			</header>
 
-        </section>
+			<section>
+				<h2></h2>
 
-        <footer class="footer">
-            <div class="content has-text-centered">
-              <p>
-                <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-                is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-              </p>
-            </div>
-          </footer>
+				<button>Submit</button>
+			</section>
 
-        <script src="assets/js/script.js"></script>
-    </body>
-</main>
+			<section>
+				<h2>Country you are visting?</h2>
+				<input type="text" />
+				<button>Submit</button>
+			</section>
 
+			<section>
+				<h2></h2>
+				<button id="ipAccess"></button>
+				<div id="myModal" class="modal">
+					<!-- Modal content -->
+					<div class="modal-content">
+						<div class="modal-header">
+							<span class="close">&times;</span>
+							<h2>Modal Header</h2>
+						</div>
+						<div class="modal-body">
+							<p>
+								This web application will be accessing your computer's current
+								IP address.
+							</p>
+							<p>
+								The only information that will be utilized will be your
+								country's code.
+							</p>
+							<p>(EX: "US" for United States of America)</p>
+							<p>Would you still like to continue?</p>
+						</div>
+						<div class="modal-footer">
+							<button id="modalYes">Yes</button>
+							<button id="modalNo">No</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<h2>Currency amount?</h2>
+				<input type="text" />
+				<button>Submit</button>
+			</section>
+
+			<section>
+				<h2>Calculated currency?</h2>
+				<input type="text" />
+				<button>Submit</button>
+			</section>
+            <footer class="footer">
+                <div class="content has-text-centered">
+                  <p>
+                    <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+                    is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+                  </p>
+                </div>
+              </footer>
+
+			<script src="assets/js/script.js"></script>
+			
+		</main>
+	</body>
 </html>
-
-  
