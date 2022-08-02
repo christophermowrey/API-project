@@ -7,7 +7,7 @@ var span = document.getElementsByClassName("close")[0];
 ipAccess.textContent = "Get my country";
 
 var requestIP = function () {
-  var ipApiKey = "efeded716793ece82a2e910e26d0d738"
+  var ipApiKey = "743a774818a192ae32029f19407bdad0"
   var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey
 
   fetch(ipUrl)
@@ -17,6 +17,7 @@ var requestIP = function () {
           .then(function (data) {
             displayIP(data);
             storeIP(data);
+            
           });
       };
     });
@@ -26,6 +27,7 @@ var requestIP = function () {
 var storeIP = function (ip) {
   var storeCountryCode = ip.country_code;
   localStorage.setItem("Home Country", JSON.stringify(storeCountryCode));
+  console.log(ip);
 }
 
 var displayIP = function (ip) {
@@ -55,7 +57,7 @@ window.onclick = function (event) {
 }
 
 if (countryOrigin === undefined) {
-    var countryOrigin = "usd";
+    var countryOrigin = "afn";
 } 
 if (countryDestination === undefined) {
  var countryDestination = "eur";
@@ -87,7 +89,9 @@ function getApi() {
   
 var displayCurrency = function (value) {
     var currency = document.querySelector("h2");
-    currency.textContent = value.eur
-}
+    currency.textContent = value.afn
+    console.log(value);
+    }
 
 getApi();
+
