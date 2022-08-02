@@ -59,6 +59,7 @@ window.onclick = function (event) {
   }
 }
 
+
 var requestCurrency = function () {
   if (countryOrigin === undefined) {
     var countryOrigin = "usd";
