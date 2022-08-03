@@ -1,14 +1,17 @@
-var ipAccess = document.querySelector("#ipAccess");
-var modalYes = document.querySelector("#modalYes");
-var modalNo = document.querySelector("#modalNo");
-var modal = document.getElementById("myModal");
-var span = document.getElementsByClassName("close")[0];
-var countryVisiting = document.querySelector("#countryvisiting");
-var currencyAmt = document.querySelector("#currencyamt");
-var currencyInput = document.querySelector("#currencyinput");
-var calculated = document.querySelector("#calculated");
+var ipAccess = $("#ipAccess");
+var modalYes = $("#modalYes");
+var modalNo = $("#modalNo");
+var modal = $("#myModal");
+var span = $(".close");
+var countryVisiting = $("#countryvisiting");
+var currencyAmt = $("#currencyamt");
+var currencyInput = $("#currencyinput");
+var calculated = $("#calculated");
+var countriesVisitingList = $("#countriesvisiting");
+var countriesVisiting = ["US", "UK"];
+var countriesVisitingCurr = ["USD", "EUR"];
 
-ipAccess.textContent = "Get my country";
+ipAccess.text("Get my country");
 
 var requestIP = function () {
   var ipApiKey = "efeded716793ece82a2e910e26d0d738"
@@ -29,40 +32,32 @@ var requestIP = function () {
 
 var storeIP = function (ip) {
   var storeCountryCode = ip.country_code;
-  localStorage.setItem("Home Country", JSON.stringify(storeCountryCode));
-  console.log(ip);
+  localStorage.setItem("Home Country", storeCountryCode);
 }
 
 var displayIP = function (ip) {
-  var countryCode = document.querySelector("h2");
-  countryCode.textContent = ip.city + ", " + ip.region_name + ", " + ip.country_name;
+  var countryCode = $("h2");
+  countryCode.text(ip.city + ", " + ip.region_name + ", " + ip.country_name);
 }
 
-function hideModal() {
-  modal.style.display = "none";
+function hideModal(event) {
+  modal.css("display", "none");
 }
 
-ipAccess.onclick = function () {
-  modal.style.display = "block";
+function showModal() {
+  modal.css("display", "block");
 }
 
-modalYes.addEventListener("click", requestIP);
-modalNo.addEventListener("click", hideModal);
+ipAccess.click(showModal);
 
-span.onclick = function () {
-  modal.style.display = "none";
-}
+modalYes.click(requestIP);
+modalNo.click(hideModal);
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
+span.click(hideModal);
 
 var requestCurrency = function () {
   if (countryOrigin === undefined) {
-    var countryOrigin = "usd";
+    var countryOrigin = localStorage.getItem("Home Country").toLowerCase() + "d";
   }
   if (countryDestination === undefined) {
     var countryDestination = "eur";
@@ -74,24 +69,44 @@ var requestCurrency = function () {
 
   fetch(currencyUrl)
     .then(function (response) {
-      console.log(response);
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       displayCalculated(data);
     })
 }
 
 function displayCalculated(rate) {
-  calculated.textContent = rate.eur * currencyInput.value;
+  calculated.text((rate.eur * currencyInput.val()).toFixed(2));
+  currencyInput.val("");
 }
 
 function submitCurrency() {
   requestCurrency();
 }
 
-currencyAmt.addEventListener("click", function (event) {
+currencyAmt.click(function (event) {
   event.preventDefault();
   submitCurrency();
 })
+
+function countriesVisitingDropDown() {
+  countriesVisitingList.addClass("overflow");
+
+  for (var i = 0; i < countriesVisiting.length; i++) {
+    var countryOption = $("<option>");
+    countryOption.text(countriesVisiting[i]);
+    countryOption.appendTo(countriesVisitingList);
+  }
+}
+
+function countriesVisitingSelect() {
+    // if you want to do stuff based on the OPTION element:
+    var opt = $(this).find('option:selected')[i];
+    // use switch or if/else etc.
+    if (opt) {
+      
+    }
+};
+
+countriesVisitingDropDown();
