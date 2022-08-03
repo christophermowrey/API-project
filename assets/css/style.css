@@ -1,16 +1,16 @@
-.header{
-    background-color: #5cb85c;
+header{
+    font-family: 'Bungee Shade', cursive;
 }
 
-body {
+
+h2 {
     font-family: 'Delius', cursive;
   }
 
-
-.footer{
-    background-color: #5cb85c;
-    
+footer {
+    font-family: 'Delius', cursive;
 }
+
 /* The Modal (background) */
 .modal {
     display: none;
