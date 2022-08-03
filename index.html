@@ -9,63 +9,101 @@
 			href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
 		/>
 		<link rel="stylesheet" href="./assets/css/style.css" />
-	</head>
-
-	<body>
-		<main>
-			<header>
-				<h1>Git That Currency</h1>
-			</header>
-
-			<section class="box4">
-				<h2></h2>
-				<!-- Modal content -->
-				<button id="ipAccess"></button>
-				<div id="myModal" class="modal">
-					<!-- Modal content -->
-					<div class="modal-content">
-						<div class="modal-header">
-							<span class="close">&times;</span>
-							<h2>Modal Header</h2>
-						</div>
-						<div class="modal-body">
-							<p>
-								This web application will be accessing your computer's current
-								IP address.
-							</p>
-							<p>
-								The only information that will be utilized will be your
-								country's code.
-							</p>
-							<p>(EX: "US" for United States of America)</p>
-							<p>Would you still like to continue?</p>
-						</div>
-						<div class="modal-footer">
-							<button id="modalYes">Yes</button>
-							<button id="modalNo">No</button>
-						</div>
+		<!DOCTYPE html>
+		<html lang="en">
+			<head>
+				<meta charset="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<title>Git That Currency</title>
+				<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"></link>
+		
+			</head>
+		
+			<body>
+				<section class="hero is-success">
+					<div class="hero-body">
+					  <p class="title ">
+						Git That Currency
+					  </p>
+					  <p class="subtitle">
+						Currency exchange
+					  </p>
 					</div>
-				</div>
-			</section>
-			<!-- Modal content -->
-
-			<section class="box1">
-				<h2>Country you are visting?</h2>
-				<input class="input is-small" type="text" placeholder="Small input" />
-				<button>Submit</button>
-			</section>
-
-			<section class="box2">
-				<h2>Currency amount?</h2>
-				<input class="input is-small" type="text" placeholder="Small input" />
-				<button>Submit</button>
-			</section>
-
-			<section class="box3">
-				<h2>Calculated currency?</h2>
-				<input class="input is-small" type="text" placeholder="Small input" />
-				<button>Submit</button>
-			</section>
+				</section>
+			   
+					
+				
+				<!--columns for location and destination -->
+		
+				<section clas="container">
+					<div class="columns  is-multiline is-mobile">
+						<div class="column is-one-half has-background-grey">
+							<button class="button is-dark">Country you are in</button>
+						</div>
+						<div class="column is-one-half has-background-grey">
+							<textarea class="textarea has-text-grey-lighter has-background-dark " placeholder="Country you are visting" rows="1"></textarea>
+						  <div class="dropdown is-active">
+							<div class="dropdown-trigger">
+							  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+								<span>Content</span>
+								<span class="icon is-small">
+								  <i class="fas fa-angle-down" aria-hidden="true"></i>
+								</span>
+							  </button>
+							</div>
+							<div class="select is-multiple">
+								<select multiple size="8">
+								  <option value="Argentina">Argentina</option>
+								  <option value="Bolivia">Bolivia</option>
+								  <option value="Brazil">Brazil</option>
+								  <option value="Chile">Chile</option>
+								  <option value="Colombia">Colombia</option>
+								  <option value="Ecuador">Ecuador</option>
+								  <option value="Guyana">Guyana</option>
+								  <option value="Paraguay">Paraguay</option>
+								  <option value="Peru">Peru</option>
+								  <option value="Suriname">Suriname</option>
+								  <option value="Uruguay">Uruguay</option>
+								  <option value="Venezuela">Venezuela</option>
+								</select>
+							  </div>
+		
+						</div>
+				</section>
+			  
+				
+				<!--input for $amount -->
+				
+				<section class="columns is-centered is 20rem has-background-white"></div>
+					<div class="py-6 my-6">
+					<div class="text-center"> Amount to be converted</div>
+						<div class="control">
+							<input class="input is-large has-text-grey-lighter has-background-dark " type="text" placeholder="$">
+							<button class="button is-dark">Show me the money!</button>
+					  </div>
+					 </div>
+					</section>
+				  
+		
+		<section class="columns is-centered is 20rem has-background-grey"></div>
+					<div class="py-6 my-6">
+					<div class="text-center">  converted</div>
+					<input class="input is-large has-text-grey-lighter has-background-dark " type="text" placeholder="$">
+					  </div>
+					 </div>
+					</section>
+					
+						
+		
+					<footer class="columns">
+					<div class="title"> Thanks For Visting!!</div>
+		
+				</footer>
+		
+		
+			</body>
+		
+			</html>
 
 			<script src="assets/js/script.js"></script>
 			<footer></footer>
