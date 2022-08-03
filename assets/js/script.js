@@ -3,12 +3,16 @@ var modalYes = document.querySelector("#modalYes");
 var modalNo = document.querySelector("#modalNo");
 var modal = document.getElementById("myModal");
 var span = document.getElementsByClassName("close")[0];
+var countryVisiting = document.querySelector("#countryvisiting");
+var currencyAmt = document.querySelector("#currencyamt");
+var currencyInput = document.querySelector("#currencyinput");
+var calculated = document.querySelector("#calculated");
 
 ipAccess.textContent = "Get my country";
 
 var requestIP = function () {
-  var ipApiKey = "743a774818a192ae32029f19407bdad0"
-  var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey
+  var ipApiKey = "efeded716793ece82a2e910e26d0d738"
+  var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey + "&output=json";
 
   fetch(ipUrl)
     .then(function (response) {
@@ -17,7 +21,6 @@ var requestIP = function () {
           .then(function (data) {
             displayIP(data);
             storeIP(data);
-            
           });
       };
     });
@@ -32,7 +35,7 @@ var storeIP = function (ip) {
 
 var displayIP = function (ip) {
   var countryCode = document.querySelector("h2");
-  countryCode.textContent = ip.country_code;
+  countryCode.textContent = ip.city + ", " + ip.region_name + ", " + ip.country_name;
 }
 
 function hideModal() {
@@ -90,8 +93,21 @@ function getApi() {
 var displayCurrency = function (value) {
     var currency = document.querySelector("h2");
     currency.textContent = value.afn
+    //need to use value. "var string"
     console.log(value);
     }
 
 getApi();
 
+function displayCalculated(rate) {
+  calculated.textContent = rate.eur * currencyInput.value;
+}
+
+function submitCurrency() {
+  requestCurrency();
+}
+
+currencyAmt.addEventListener("click", function (event) {
+  event.preventDefault();
+  submitCurrency();
+})

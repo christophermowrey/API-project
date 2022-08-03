@@ -32,9 +32,8 @@
                         </p>
                         <p>
                             The only information that will be utilized will be your
-                            country's code.
+                            country, region/state, and city.
                         </p>
-                        <p>(EX: "US" for United States of America)</p>
                         <p>Would you still like to continue?</p>
                     </div>
                     <div class="modal-footer">
@@ -47,16 +46,21 @@
 
         <section>
             <h2>Country you are visiting?</h2>
-        </section>
-
-        <section>
-            <h2>Currency amount?</h2>
-            <input type="text" />
+            <input type="text" id="countryvisiting" />
             <button>Submit</button>
         </section>
 
         <section>
-            <h2>Calculated currency:</h2>
+            <h2>Currency amount?</h2>
+            <form>
+                <input type="text" id="currencyinput"></input>
+                <button id="currencyamt">Submit</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Calculated currency?</h2>
+            <p id="calculated"></p>
         </section>
 
         <footer class="footer">
