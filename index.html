@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Git That Currency</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Git That Currency</title>
 
         <!--bulma-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -11,8 +11,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Delius&family=Rubik+Puddles&display=swap" rel="stylesheet">
 
         <!--stylesheet-->
-		<link rel="stylesheet" href="./assets/css/style.css" />
-	</head>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
 
 <head>
     <meta charset="UTF-8" />
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
-	<body>
+    <body>
         <header class="header">
             <section class="hero is-link">
                 <div class="hero-body">
@@ -35,7 +35,7 @@
                 </div>
               </section>
         </header>
-		
+        
     <main>
         <section>
             <h2></h2>
@@ -66,30 +66,58 @@
             </div>
         </section>
 
-        <section>
-            <h2>Country you are visiting?</h2>
-            <input type="text" id="countryvisiting" />
-            <button>Submit</button>
-        </section>
-
-        <section>
-            <h2>Currency amount?</h2>
-            <form>
-                <input type="text" id="currencyinput"></input>
-                <button id="currencyamt">Submit</button>
-            </form>
-        </section>
-
-        <section>
-            <h2>Calculated currency?</h2>
-            <p id="calculated"></p>
-        </section>
-
-			<section>
-				<h2>Calculated currency?</h2>
-				<input type="text" />
-				<button>Submit</button>
-			</section>
+ <!--columns for location and destination -->
+ <section clas=“container”>
+    <div class=“columns  is-multiline is-mobile”>
+        <div class=“column is-one-half has-background-grey”>
+            <button class=“button is-dark”>Country you are in</button>
+        </div>
+        <div class=“column is-one-half has-background-grey”>
+          <code>country You are visting</code>
+          <div class=“dropdown is-active”>
+            <div class=“dropdown-trigger”>
+              <button class=“button” aria-haspopup=“true” aria-controls=“dropdown-menu2”>
+                <span>Content</span>
+                <span class=“icon is-small”>
+                  <i class=“fas fa-angle-down” aria-hidden=“true”></i>
+                </span>
+              </button>
+            </div>
+            <div class=“dropdown-menu” id=“dropdown-menu2" role=“menu”>
+              <div class=“dropdown-content”>
+                <div class=“dropdown-item”>
+                  <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+                </div>
+                <hr class=“dropdown-divider”>
+                <div class=“dropdown-item”>
+                  <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
+                </div>
+                <hr class=“dropdown-divider”>
+                <a href=“#” class=“dropdown-item”>
+                  This is a link
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+</section>
+<!--input for $amount -->
+<section class=“columns is-centered is 20rem has-background-white”></div>
+    <div class=“py-6 my-6">
+    <div class=“text-center”> Amount to be converted</div>
+        <div class=“control”>
+            <input class=“input is-large” type=“text” placeholder=“$”>
+            <button class=“button is-dark”>Show me the money!</button>
+      </div>
+     </div>
+    </section>
+<section class=“columns is-centered is 20rem has-background-grey”></div>
+    <div class=“py-6 my-6">
+    <div class=“text-center”>  converted</div>
+    <input class=“input is-large” type=“text” placeholder=“$”>
+      </div>
+     </div>
+    </section>
 
             <!--footer-->
             <footer class="footer">
@@ -99,8 +127,7 @@
                 
               </footer>
 
-			
-
+            
 
     </main>
                   <!-- Added link to the jQuery library -->
