@@ -29,20 +29,6 @@
         </header>
         
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Git That Currency</title>
-    <!--reset-stylesheet-->
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <!--bulma-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!--text-->
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
-    <!--stylesheet-->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-
 <body>
  <!--columns for location and destination -->
  <section clas="container">
@@ -75,7 +61,7 @@
             </div>
         </div>
         <div class="column is-one-half has-background-grey">
-          <code>country You are visting</code>
+          <button class="button is dark">Country you are visiting</button>
           <div class="dropdown is-active">
             <div class="dropdown-trigger">
               <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
@@ -103,6 +89,25 @@
           </div>
         </div>
 </section>
+
+ <!--input for $amount -->
+ <section class="columns is-centered is 20rem has-background-white"></div>
+    <div class="py-6 my-6">
+    <div class="text-center"> Amount to be converted</div>
+        <div class="control">
+            <input class="input is-large" type="text" placeholder="$">
+            <button class="button is-dark">Show me the money!</button>
+      </div>
+     </div>
+    </section>
+<section class="columns is-centered is 20rem has-background-grey"></div>
+    <div class="py-6 my-6">
+    <div class="text-center">  converted</div>
+    <input class="input is-large" type="text" placeholder="$">
+      </div>
+     </div>
+    </section>
+
             
 
         <section>
@@ -110,6 +115,11 @@
             <select id="countriesvisiting"></select>
         </section>
 
+        <footer class="footer">
+            <div class="content has-text-centered">
+              <p class="has-background-link has-text-white">Thank you for visiting!</p>
+            </div>
+          </footer>
 
     </main>
     <!-- Added link to the jQuery library -->
