@@ -1,6 +1,15 @@
+.header{
+    background-color: #5cb85c;
+}
+
+body {
+    font-family: 'Delius', cursive;
+  }
+
+
 .footer{
-    background-color: yellowgreen;
-    color: whitesmoke;
+    background-color: #5cb85c;
+    
 }
 /* The Modal (background) */
 .modal {
