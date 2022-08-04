@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git That Currency</title>
     <!--Reset-->
@@ -18,15 +17,16 @@
 </head>
 
 <body>
-    <!--Header-->
-    <section class="hero is-warning">
-        <div class="hero-body">
-            <h1 class="title is-1 is-spaced content has-text-centered">GIT THAT CURRENCY</h1>
-        </div>
-    </section>
+    <header>
+        <section class="hero is-warning">
+            <div class="hero-body">
+                <h1 class="title is-1 is-spaced content has-text-centered">GIT THAT CURRENCY</h1>
+            </div>
+        </section>
+    </header>
+
     <main>
-        <!--columns for location and destination -->
-        <header class="container is-flex is-justify-content-space-between is-mobile has-background-success is-fluid">
+        <section class="container is-flex is-justify-content-space-between is-mobile has-background-success is-fluid">
             <div>
                 <h2></h2>
                 <button id="ipAccess" class="button is-dark"></button>
@@ -39,7 +39,7 @@
                     </select>
                 </div>
             </div>
-        </header>
+        </section>
         <section>
             <div id="myModal" class="modal">
                 <div class="modal-background"></div>
@@ -67,7 +67,7 @@
             </div>
         </section>
         <!--input for $amount -->
-        <section class="columns is-centered is 20rem has-background-white">
+        <section class="columns is-centered has-background-white">
             </div>
             <div class="py-6 my-6">
                 <h4 class="text-center">Amount to be converted</h4>
