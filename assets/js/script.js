@@ -1993,6 +1993,7 @@ var requestIP = function () {
 
 var storeIP = function (ip) {
   var storeCountryCode = ip.country_code;
+  console.log(ip.country_code);
   localStorage.setItem("Home Country", storeCountryCode.toLowerCase());
   indexHomeCountry();
 }

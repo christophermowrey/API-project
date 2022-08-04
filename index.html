@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-   
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,96 +12,98 @@
 </head>
 
 <body>
- <!--columns for location and destination -->
- <section clas="container">
-    <div class="columns is-multiline is-mobile">
-        <div class="column is-one-half has-background-grey">
-            <button id="ipAccess" class="button is-dark">Country you are in</button>
-            <div id="myModal" class="modal">
+    <!--columns for location and destination -->
+    <section clas="container">
+        <div class="columns is-multiline is-mobile">
+            <div class="column is-one-half has-background-grey">
+                <button id="ipAccess" class="button is-dark">Country you are in</button>
+                <div id="myModal" class="modal">
 
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>Modal Header</h2>
-                    </div>
-                    <div class="modal-body">
-                        <p>
-                            This web application will be accessing your computer's current
-                            IP address.
-                        </p>
-                        <p>
-                            The only information that will be utilized will be your
-                            country, region/state, and city.
-                        </p>
-                        <p>Would you still like to continue?</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="modalYes">Yes</button>
-                        <button id="modalNo">No</button>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <span class="close">&times;</span>
+                            <h2>Modal Header</h2>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                This web application will be accessing your computer's current
+                                IP address.
+                            </p>
+                            <p>
+                                The only information that will be utilized will be your
+                                country, region/state, and city.
+                            </p>
+                            <p>Would you still like to continue?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="modalYes">Yes</button>
+                            <button id="modalNo">No</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column is-one-half has-background-grey">
-          <button class="button is dark">Country you are visiting</button>
-          <div class="dropdown is-active">
-            <div class="dropdown-trigger">
-              <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
-                <span>Content</span>
-                <span class="icon is-small">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </div>
-            <div class="dropdown-menu" id="dropdown-menu2" role="menu">
-              <div class="dropdown-content">
-                <div class="dropdown-item">
-                  <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+            <div class="column is-one-half has-background-grey">
+                <button class="button is dark">Country you are visiting</button>
+                <div class="dropdown is-active">
+                    <div class="dropdown-trigger">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu2">
+                            <span>Content</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu2" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <p>You can insert <strong>any type of content</strong> within the dropdown menu.</p>
+                            </div>
+                            <hr class="dropdown-divider">
+                            <div class="dropdown-item">
+                                <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
+                            </div>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                This is a link
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <hr class="dropdown-divider">
-                <div class="dropdown-item">
-                  <p>You simply need to use a <code>&lt;div&gt;</code> instead.</p>
-                </div>
-                <hr class="dropdown-divider">
-                <a href="#" class="dropdown-item">
-                  This is a link
-                </a>
-              </div>
             </div>
-          </div>
-        </div>
-</section>
-
- <!--input for $amount -->
- <section class="columns is-centered is 20rem has-background-white"></div>
-    <div class="py-6 my-6">
-    <div class="text-center">Amount to be converted</div>
-        <div class="control">
-            <input class="input is-large" type="text" placeholder="$">
-            <button class="button is-dark">Show me the money!</button>
-      </div>
-     </div>
-    </section>
-<section class="columns is-centered is 20rem has-background-grey"></div>
-    <div class="py-6 my-6">
-    <div class="text-center">Converted</div>
-    <input class="input is-large" type="text" placeholder="$">
-      </div>
-     </div>
     </section>
 
-            
-
-        <section>
-            <label for="countriesvisiting">Select the country you are visiting:</label>
-            <select id="countriesvisiting"></select>
-        </section>
-
-        <footer class="footer">
-            <div class="content has-text-centered">
-              <p class="has-background-link has-text-white">Thank you for visiting!</p>
+    <!--input for $amount -->
+    <section class="columns is-centered is 20rem has-background-white">
+        </div>
+        <div class="py-6 my-6">
+            <div class="text-center">Amount to be converted</div>
+            <div class="control">
+                <input class="input is-large" type="text" placeholder="$" id="currencyinput">
+                <button id="currencyamt" class="button is-dark">Show me the money!</button>
             </div>
-          </footer>
+        </div>
+    </section>
+    <section class="columns is-centered is 20rem has-background-grey">
+        </div>
+        <div class="py-6 my-6">
+            <div class="text-center">Converted</div>
+            <div id="calculated" </div>
+                <!-- Need a place holder until "calculated" is populated -->
+            </div>
+    </section>
+
+
+
+    <section>
+        <label for=" countriesvisiting">Select the country you are visiting:</label>
+        <select id="countriesvisiting"></select>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p class="has-background-link has-text-white">Thank you for visiting!</p>
+        </div>
+    </footer>
 
     </main>
     <!-- Added link to the jQuery library -->
