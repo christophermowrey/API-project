@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 {
     font-family: 'Nosifer', cursive;
 }
@@ -6,16 +7,27 @@ h2,
 p,
 subtitle,
 body {
+=======
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Delius', cursive;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+p {
+>>>>>>> 3b214a71e3f10b6ebf8462d7eb9258dee4aad2df
     font-family: 'Delius', cursive;
     font-size: 20px;
-  }
+    padding: 10px;
+}
 
 
 footer {
     font-family: 'Delius', cursive;
 }
-
-
 
 /* The Modal (background) */
 .modal {
@@ -56,45 +68,31 @@ footer {
     animation-duration: 0.4s
 }
 
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
 /* The Close Button */
 .close {
     color: black;
-    float: right;
     font-size: 20px;
     font-weight: bold;
-    border: 1px solid black;
-    background-color: white;
-    padding: 0 5px;
+    margin: 0rem;
 }
 
 .close:hover,
 .close:focus {
     color: greenyellow;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dropdownselect {
+    background-color: #00a140;
+    color: rgb(0, 250, 250);
+    text-decoration: none;
+}
+
+.dropdownselect:hover,
+.dropdownselect:focus {
+    color: #3f7856;
+    background-color: lightcyan;
     text-decoration: none;
     cursor: pointer;
 }
@@ -106,7 +104,7 @@ footer {
 }
 
 .modal-body {
-    padding: 2px 16px;
+    padding: 20px;
 }
 
 .modal-footer {
@@ -115,10 +113,26 @@ footer {
     color: white;
 }
 
+.container {
+    padding: 2rem;
+}
+
+#ipAccess,
+#currencyamt {
+    font-family: 'Delius', cursive;
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
 #ipAccess:hover,
 #ipAccess:focus {
     text-decoration: none;
     cursor: pointer;
+}
+
+#modalYes,
+#modalNo { 
+    margin: 0.5rem;
 }
 
 #modalYes:hover,
@@ -131,4 +145,13 @@ footer {
 #modalNo:focus {
     text-decoration: none;
     cursor: pointer;
+}
+
+#currencyamt {
+    margin: 1rem 0.25rem;
+}
+
+#calculated {
+    font-family: 'Delius', cursive;
+    font-size: 2rem;
 }
