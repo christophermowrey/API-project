@@ -1983,7 +1983,6 @@ var requestIP = function () {
         response.json()
           .then(function (data) {
             displayIP(data);
-            console.log(data)
             storeIP(data);
           });
       };
