@@ -1975,7 +1975,7 @@ ipAccess.text("Get my Country");
 
 var requestIP = function () {
   var ipApiKey = "efeded716793ece82a2e910e26d0d738"
-  var ipUrl = "http://api.ipapi.com/api/check?access_key=" + ipApiKey + "&output=json";
+  var ipUrl = "https://api.ipapi.com/api/check?access_key=" + ipApiKey + "&output=json";
 
   fetch(ipUrl)
     .then(function (response) {
