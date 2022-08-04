@@ -1,14 +1,4 @@
-var ipAccess = $("#ipAccess");
-var modalYes = $("#modalYes");
-var modalNo = $("#modalNo");
-var modal = $("#myModal");
-var span = $(".close");
-var countryVisiting = $("#countryvisiting");
-var currencyAmt = $("#currencyamt");
-var currencyInput = $("#currencyinput");
-var calculated = $("#calculated");
-var countriesVisitingList = $("#countriesvisiting");
-countryMatrixObject = {
+const countryMatrixObject = {
   "af": {
     "country_name": "afghanistan",
     "country_iso3": "afg",
@@ -1970,6 +1960,16 @@ countryMatrixObject = {
     "currency_number": "978"
   }
 }
+var ipAccess = $("#ipAccess");
+var modalYes = $("#modalYes");
+var modalNo = $("#modalNo");
+var modal = $("#myModal");
+var span = $(".close");
+var countryVisiting = $("#countryvisiting");
+var currencyAmt = $("#currencyamt");
+var currencyInput = $("#currencyinput");
+var calculated = $("#calculated");
+var countriesVisitingList = $("#countriesvisiting");
 var countryMatrixArrayObj = Object.entries(countryMatrixObject);
 
 ipAccess.text("Get my country");
