@@ -1974,8 +1974,9 @@ var countryMatrixArrayObj = Object.entries(countryMatrixObject);
 ipAccess.text("Get my Country");
 
 var requestIP = function () {
-  var ipApiKey = "efeded716793ece82a2e910e26d0d738"
-  var ipUrl = "https://api.ipapi.com/api/check?access_key=" + ipApiKey + "&output=json";
+  var ipApiKey = "d7567404377b4403a4ed2d0fa8b2f0ed"
+  var ipUrl = "https://ipgeolocation.abstractapi.com/v1/?api_key=" + ipApiKey;
+  // https://app.abstractapi.com/api/ip-geolocation/documentation
 
   fetch(ipUrl)
     .then(function (response) {
@@ -1998,7 +1999,7 @@ var storeIP = function (ip) {
 
 var displayIP = function (ip) {
   var countryCode = $("h2");
-  countryCode.text(ip.city + ", " + ip.region_name + ", " + ip.country_name);
+  countryCode.text(ip.city + ", " + ip.country);
 }
 
 function hideModal() {
