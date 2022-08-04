@@ -1,29 +1,26 @@
-<<<<<<< HEAD
 h1 {
-    font-family: 'Nosifer', cursive;
+    font-family: 'Delius', cursive;
+    font-size: 3rem;
 }
 
 h2,
-p,
-subtitle,
-body {
-=======
-h1,
-h2,
 h3,
-h4 {
+h4,
+h5 {
     font-family: 'Delius', cursive;
     margin-bottom: 0.75rem;
     font-size: 1.5rem;
 }
 
 p {
->>>>>>> 3b214a71e3f10b6ebf8462d7eb9258dee4aad2df
     font-family: 'Delius', cursive;
     font-size: 20px;
     padding: 10px;
 }
 
+option {
+    font-family: 'Delius', cursive;
+}
 
 footer {
     font-family: 'Delius', cursive;
