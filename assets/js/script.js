@@ -1983,6 +1983,7 @@ var requestIP = function () {
         response.json()
           .then(function (data) {
             displayIP(data);
+            console.log(data)
             storeIP(data);
           });
       };
@@ -1991,8 +1992,8 @@ var requestIP = function () {
 }
 
 var storeIP = function (ip) {
-  var storeCountryCode = ip.country_code;
-  localStorage.setItem("Home Country", storeCountryCode.toLowerCase());
+  var storeCountryCode = ip.country_code.toLowerCase();
+  localStorage.setItem("Home Country", storeCountryCode);
   indexHomeCountry();
 }
 
@@ -2001,7 +2002,7 @@ var displayIP = function (ip) {
   countryCode.text(ip.city + ", " + ip.region_name + ", " + ip.country_name);
 }
 
-function hideModal(event) {
+function hideModal() {
   modal.css("display", "none");
   indexHomeCountry();
 }
