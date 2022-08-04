@@ -3,24 +3,31 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Git That Currency</title>
     <!--Reset-->
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <!--Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-   <!--font-->
-   <link href="https://fonts.googleapis.com/css2?family=Delius&family=Moo+Lah+Lah&family=Nosifer&display=swap" rel="stylesheet">
+    <!--font-->
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Moo+Lah+Lah&family=Nosifer&display=swap"
+        rel="stylesheet">
     <!--stylesheet-->
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
+<<<<<<< HEAD
 <!--Header-->    
+=======
+    <!--Header-->
+>>>>>>> 37d6b518a7cccd056b519e7d3f3a80847c36042c
     <section class="hero is-warning">
         <div class="hero-body">
-          <h1 class="title is-1 is-spaced content has-text-centered">GIT THAT CURRENCY</h1>
+            <h1 class="title is-1 is-spaced content has-text-centered">GIT THAT CURRENCY</h1>
         </div>
+<<<<<<< HEAD
       </section>    
  <!--columns for location and destination -->
  <section clas="container">
@@ -28,16 +35,19 @@
         <div class="column is-one-half has-background-grey">
             <button id="ipAccess" class="button is-dark">Country you are in</button>
             <div id="myModal" class="modal">
+=======
+    </section>
+>>>>>>> 37d6b518a7cccd056b519e7d3f3a80847c36042c
     <main>
         <!--columns for location and destination -->
         <header class="container is-flex is-justify-content-space-between is-mobile has-background-success is-fluid">
             <div>
-                <h1></h1>
+                <h2></h2>
                 <button id="ipAccess" class="button is-dark"></button>
             </div>
 
             <div>
-                <h2>Select the country you are visiting:</h2>
+                <h3>Select the country you are visiting:</h3>
                 <div class="dropdown is-active">
                     <select class="dropdown-content dropdownselect" id="countriesvisiting">
                     </select>
@@ -74,17 +84,17 @@
         <section class="columns is-centered is 20rem has-background-white">
             </div>
             <div class="py-6 my-6">
-                <h3 class="text-center">Amount to be converted</h3>
-                <div class="control">
-                    <input id="currencyinput" class="input is-large" type="text">
+                <h4 class="text-center">Amount to be converted</h4>
+                <form class="control">
+                    <input id="currencyinput" class="input is-large" type="text"></input>
                     <button id="currencyamt" class="button is-dark">Show me the money!</button>
-                </div>
+                </form>
             </div>
         </section>
         <section class="columns is-centered has-background-success">
             </div>
             <div class="py-6 my-6 text-center">
-                <h4>Converted</h4>
+                <h5>Converted</h5>
                 <p id="calculated"></p>
             </div>
             </div>
