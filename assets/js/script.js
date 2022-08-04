@@ -1965,14 +1965,13 @@ var modalYes = $("#modalYes");
 var modalNo = $("#modalNo");
 var modal = $("#myModal");
 var span = $(".close");
-var countryVisiting = $("#countryvisiting");
 var currencyAmt = $("#currencyamt");
 var currencyInput = $("#currencyinput");
 var calculated = $("#calculated");
 var countriesVisitingList = $("#countriesvisiting");
 var countryMatrixArrayObj = Object.entries(countryMatrixObject);
 
-ipAccess.text("Get my country");
+ipAccess.text("Get my Country");
 
 var requestIP = function () {
   var ipApiKey = "efeded716793ece82a2e910e26d0d738"
@@ -1998,7 +1997,7 @@ var storeIP = function (ip) {
 }
 
 var displayIP = function (ip) {
-  var countryCode = $("h2");
+  var countryCode = $("h1");
   countryCode.text(ip.city + ", " + ip.region_name + ", " + ip.country_name);
 }
 
