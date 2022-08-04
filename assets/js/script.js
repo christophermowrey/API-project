@@ -1997,7 +1997,7 @@ var storeIP = function (ip) {
 }
 
 var displayIP = function (ip) {
-  var countryCode = $("h1");
+  var countryCode = $("h2");
   countryCode.text(ip.city + ", " + ip.region_name + ", " + ip.country_name);
 }
 
