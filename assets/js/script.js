@@ -2041,18 +2041,24 @@ var requestCurrency = function () {
   if (countryDestination === undefined) {
     var countryDestination = localStorage.getItem("Visiting Country Currency");
   }
-  var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
-  // https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
-  // https://github.com/fawazahmed0/currency-api
+  if (!countryDestination) {
+    calculated.text("Sorry! This country does not have a global currency!")
+    currencyInput.val("");
+  } else {
+    var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
+    // https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
+    // https://github.com/fawazahmed0/currency-api
+  
+    fetch(currencyUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        var dataArray = Object.entries(data);
+        displayCalculated(dataArray[1][1]);
+      })
+  }
 
-  fetch(currencyUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      var dataArray = Object.entries(data);
-      displayCalculated(dataArray[1][1]);
-    })
 }
 
 function displayCalculated(rate) {
