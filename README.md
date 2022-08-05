@@ -1,8 +1,8 @@
 # Git That Currency
 
-Deployed URL:
+Deployed URL: https://christophermowrey.github.io/GitThatCurrency/
 
-GitHub URL:
+GitHub URL: https://github.com/christophermowrey/GitThatCurrency
 
 ## Description
 
