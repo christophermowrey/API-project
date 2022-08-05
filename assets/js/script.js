@@ -1,3 +1,4 @@
+// Declare Variables
 const countryMatrixObject = {
   "af": {
     "country_name": "afghanistan",
@@ -1971,12 +1972,10 @@ var calculated = $("#calculated");
 var countriesVisitingList = $("#countriesvisiting");
 var countryMatrixArrayObj = Object.entries(countryMatrixObject);
 
-ipAccess.text("Get my Country");
-
+// Functions for Functionality of Requesting User's IP Address
 var requestIP = function () {
   var ipApiKey = "d7567404377b4403a4ed2d0fa8b2f0ed"
   var ipUrl = "https://ipgeolocation.abstractapi.com/v1/?api_key=" + ipApiKey;
-  // https://app.abstractapi.com/api/ip-geolocation/documentation
 
   fetch(ipUrl)
     .then(function (response) {
@@ -2002,6 +2001,7 @@ var displayIP = function (ip) {
   countryCode.text(ip.city + ", " + ip.country);
 }
 
+// Functions and Event Listeners for the Modal
 function hideModal() {
   modal.css("display", "none");
   indexHomeCountry();
@@ -2016,6 +2016,7 @@ modalYes.click(requestIP);
 modalNo.click(hideModal);
 span.click(hideModal);
 
+// Functions for Setting Local Storage
 function indexHomeCountry() {
   countryMatrixArrayObj.findIndex(element => {
     if (element[0] === localStorage.getItem("Home Country")) {
@@ -2034,6 +2035,21 @@ function indexDestinationCountry() {
   });
 }
 
+function countryChange() {
+  $(document).ready(function () {
+    countriesVisitingList.change(function () {
+      var selectedOptions = $('#countriesvisiting option:selected');
+      if (selectedOptions.length > 0) {
+        selectedOptions.each(function () {
+          var visitingCurrencyCode = $(this).val()
+          localStorage.setItem("Visiting Country Currency", visitingCurrencyCode)
+        })
+      }
+    });
+  });
+}
+
+// Functions for Functionality of Requesting Currency API and Exchanging Currency
 var requestCurrency = function () {
   if (countryOrigin === undefined) {
     var countryOrigin = localStorage.getItem("Home Country Currency");
@@ -2048,7 +2064,7 @@ var requestCurrency = function () {
     var currencyUrl = 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/' + countryOrigin + "/" + countryDestination + '.json';
     // https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@{apiVersion}/{date}/{endpoint}
     // https://github.com/fawazahmed0/currency-api
-  
+
     fetch(currencyUrl)
       .then(function (response) {
         return response.json();
@@ -2058,7 +2074,6 @@ var requestCurrency = function () {
         displayCalculated(dataArray[1][1]);
       })
   }
-
 }
 
 function displayCalculated(rate) {
@@ -2070,11 +2085,7 @@ function submitCurrency() {
   requestCurrency();
 }
 
-currencyAmt.click(function (event) {
-  event.preventDefault();
-  submitCurrency();
-})
-
+// Dropdown List of Visiting Countries
 function countriesVisitingDropDown() {
   countriesVisitingList.addClass("overflow");
   for (var i = 0; i < countryMatrixArrayObj.length; i++) {
@@ -2085,27 +2096,12 @@ function countriesVisitingDropDown() {
   }
 }
 
-function countriesVisitingSelect() {
-  // if you want to do stuff based on the OPTION element:
-  var opt = $(this).find('option:selected')[i];
-  // use switch or if/else etc.
-  if (opt) {
-    var opt = $(this).find('option:selected')[i];
-  }
-};
+// Event Listener for Currency Conversion
+currencyAmt.click(function (event) {
+  event.preventDefault();
+  submitCurrency();
+})
 
-function countryChange() {
-  $(document).ready(function () {
-    countriesVisitingList.change(function () {
-      var selectedOptions = $('#countriesvisiting option:selected');
-      if (selectedOptions.length > 0) {
-        selectedOptions.each(function () {
-          var visitingCurrencyCode = $(this).val()
-          localStorage.setItem("Visiting Country Currency", visitingCurrencyCode)
-        })
-      }
-    });
-  });
-}
+// Functions for Page Refresh
 countryChange();
 countriesVisitingDropDown();
