@@ -1,4 +1,12 @@
 # Git That Currency
+<<<<<<< HEAD
+=======
+
+Deployed URL: https://christophermowrey.github.io/GitThatCurrency/
+
+GitHub URL: https://github.com/christophermowrey/GitThatCurrency
+
+>>>>>>> 50fe4a448b8be8fbcf9ba63ae2aaccac8b097f49
 ## Description
 
 The goal of the project was to use Abstract IP Geolocation API and Currency-API that can pull user's IP address location and different country location to be enable us to have access to money converison from user's location and differenct contry location. The motivation for this project was finding something that would interest everyone in the group and willing to put effort in for the final result. We pick this topic because of the current currency of United States and Europe are comparable and we was interested in what the US dollar is compared to other countries.
@@ -11,7 +19,9 @@ The goal of the project was to use Abstract IP Geolocation API and Currency-API 
 - Then amount should convert, once click "show me the money!" button
 ### Photo of Mock-up
 ![alt text]()
+<<<<<<< HEAD
 
 Deployed URL: https://christophermowrey.github.io/GitThatCurrency/
 
 GitHub URL: https://github.com/christophermowrey/GitThatCurrency
+
