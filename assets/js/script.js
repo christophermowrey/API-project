@@ -2020,17 +2020,8 @@ span.click(hideModal);
 function indexHomeCountry() {
   countryMatrixArrayObj.findIndex(element => {
     if (element[0] === localStorage.getItem("Home Country")) {
-      var currentCurrencyCode = element[1].currency_code
-      localStorage.setItem("Home Country Currency", currentCurrencyCode)
-    }
-  });
-}
-
-function indexDestinationCountry() {
-  countryMatrixArrayObj.findIndex(element => {
-    if (element[0] === countryOption.value) {
-      var currentCurrencyCode = element[1].currency_code
-      localStorage.setItem("Home Country Currency", currentCurrencyCode)
+      var currentCurrencyCode = element[1].currency_code;
+      localStorage.setItem("Home Country Currency", currentCurrencyCode);
     }
   });
 }
@@ -2041,8 +2032,8 @@ function countryChange() {
       var selectedOptions = $('#countriesvisiting option:selected');
       if (selectedOptions.length > 0) {
         selectedOptions.each(function () {
-          var visitingCurrencyCode = $(this).val()
-          localStorage.setItem("Visiting Country Currency", visitingCurrencyCode)
+          var visitingCurrencyCode = $(this).val();
+          localStorage.setItem("Visiting Country Currency", visitingCurrencyCode);
         })
       }
     });
@@ -2071,13 +2062,13 @@ var requestCurrency = function () {
       })
       .then(function (data) {
         var dataArray = Object.entries(data);
-        displayCalculated(dataArray[1][1]);
+        displayCalculated(dataArray);
       })
   }
 }
 
 function displayCalculated(rate) {
-  calculated.text((rate * currencyInput.val()).toFixed(2));
+  calculated.text((rate[1][1] * currencyInput.val()).toFixed(2));
   currencyInput.val("");
 }
 
@@ -2091,7 +2082,7 @@ function countriesVisitingDropDown() {
   for (var i = 0; i < countryMatrixArrayObj.length; i++) {
     var countryOption = $("<option>");
     countryOption.text(countryMatrixArrayObj[i][1].country_name + " (" + countryMatrixArrayObj[i][1].country_iso3.toUpperCase() + ")");
-    countryOption.val(countryMatrixArrayObj[i][1].currency_code)
+    countryOption.val(countryMatrixArrayObj[i][1].currency_code);
     countryOption.appendTo(countriesVisitingList);
   }
 }
